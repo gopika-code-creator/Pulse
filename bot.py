@@ -18,15 +18,15 @@ def get_weather(city="Thiruvananthapuram"):
 def get_quote():
     """Fetch a random motivational quote from ZenQuotes."""
     url = "https://zenquotes.io/api/random"
-  try:
-    response = requests.get(url, timeout=10)
-    response.raise_for_status()
-    data = response.json()  # JSON -> Python List
-    quote = data[0]["q"]
-    author = data[0]["a"]
-    return f"{quote} - {author}"
-  except Exception as e:
-    return f"Quote unavailable ({e})"
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        data = response.json()  # JSON -> Python List
+        quote = data[0]["q"]
+        author = data[0]["a"]
+        return f"{quote} - {author}"
+    except Exception as e:
+        return f"Quote unavailable ({e})"
 def build_summary():
     """Assemble the full daily summary from all data sources."""
     today = date.today().strftime("%A, %d %B %Y")
