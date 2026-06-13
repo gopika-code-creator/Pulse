@@ -23,6 +23,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Pulse bot
+        env:
+          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         run: python bot.py
 
       - name: Upload summary as artifact
