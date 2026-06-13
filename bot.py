@@ -69,14 +69,12 @@ def send_weather_alert():
         response = requests.get(url, timeout=10)
         response.raise_for_status()
 
-        data = response.json()
+               data = response.json()
 
         temp = data["main"]["temp"]
         weather = data["weather"][0]["main"]
 
         print(f"OpenWeatherMap: {temp}°C, {weather}")
-
-               print(f"OpenWeatherMap: {temp}°C, {weather}")
 
         if True:
 
@@ -84,6 +82,7 @@ def send_weather_alert():
             msg["Subject"] = f"Weather Alert - {city}"
             msg["From"] = email_user
             msg["To"] = email_user
+
             msg.set_content(
                 f"""
 Weather Alert!
@@ -104,7 +103,6 @@ Take necessary precautions.
 
         else:
             print("No weather alert required.")
-
     except Exception as e:
         print(f"Alert system error: {e}")    
 def run():
