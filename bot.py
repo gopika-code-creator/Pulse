@@ -76,7 +76,7 @@ def send_weather_alert():
 
         print(f"OpenWeatherMap: {temp}°C, {weather}")
 
-        if temp > 35 or weather.lower() == "rain":
+       if True:
 
             msg = EmailMessage()
             msg["Subject"] = f"Weather Alert - {city}"
