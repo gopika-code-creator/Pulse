@@ -76,13 +76,14 @@ def send_weather_alert():
 
         print(f"OpenWeatherMap: {temp}°C, {weather}")
 
-       if True:
+               print(f"OpenWeatherMap: {temp}°C, {weather}")
+
+        if True:
 
             msg = EmailMessage()
             msg["Subject"] = f"Weather Alert - {city}"
             msg["From"] = email_user
             msg["To"] = email_user
-
             msg.set_content(
                 f"""
 Weather Alert!
