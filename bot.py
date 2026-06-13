@@ -69,7 +69,7 @@ def send_weather_alert():
         response = requests.get(url, timeout=10)
         response.raise_for_status()
 
-               data = response.json()
+        data = response.json()
 
         temp = data["main"]["temp"]
         weather = data["weather"][0]["main"]
@@ -103,6 +103,7 @@ Take necessary precautions.
 
         else:
             print("No weather alert required.")
+
     except Exception as e:
         print(f"Alert system error: {e}")    
 def run():
